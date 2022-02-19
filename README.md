@@ -53,6 +53,7 @@ sudo systemctl restart vncserver@:5.service
 sudo systemctl status vncserver@:4.service
 sudo systemctl status vncserver@:5.service
 sudo -rm /tmp/.X11-unix/X5 /tmp/.X11-unix/X4
+ssh -L 5900:31.187.74.183:5904 adam@31.187.74.183 -N
 
 
 
