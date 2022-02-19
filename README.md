@@ -50,6 +50,9 @@ moha: vncserver
 sudo systemctl daemon-reload
 sudo systemctl restart vncserver@:4.service
 sudo systemctl restart vncserver@:5.service
+sudo systemctl status vncserver@:4.service
+sudo systemctl status vncserver@:5.service
+sudo -rm /tmp/.X11-unix/X5 /tmp/.X11-unix/X4
 
 
 
