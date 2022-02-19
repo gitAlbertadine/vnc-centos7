@@ -1,15 +1,10 @@
-# vnc-centos7
+## vnc-centos 7
 ```
--https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-
-sudo fallocate -l 32G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
-sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
 [
 sudo swapoff -v /swapfile
 -Next, remove the swap file entry /swapfile swap swap defaults 0 0 from the /etc/fstab file.
 sudo rm /swapfile
+
 sudo dd if=/dev/zero of=/swapfile bs=32768 count=1048576
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
