@@ -99,7 +99,6 @@ sudo firewall-cmd --reload
 sudo -rm /tmp/.X11-unix/X1
 sudo firewall-cmd --list-all
 sudo reboot
-# in case of a problem reboot
 #cat /proc/sys/vm/swappiness
 
 
