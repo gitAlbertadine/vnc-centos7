@@ -79,18 +79,16 @@ sudo free -h
 sudo yum install -y tigervnc-server
 sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
 sudo useradd -c "User adam Configured for VNC Access" adam
-
 sudo passwd adam
-
 sudo vim /etc/systemd/system/vncserver@:1.service
 #adam
 
 sudo systemctl daemon-reload
 su - adam
-
 vncpasswd
-
 exit
+
+sudo systemctl daemon-reload
 
 sudo systemctl enable vncserver@:1.service
 sudo systemctl start vncserver@:1.service
