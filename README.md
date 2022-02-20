@@ -82,7 +82,7 @@ sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.
 sudo vi /etc/systemd/system/vncserver@:1.service
 #---------------------
 sudo systemctl enable vncserver@:1.service
-sudo firewall-cmd --permanent --zone=public --add-port=5901/tcp
+sudo firewall-cmd --permanent --zone=public --add-port=5900-5901/tcp
 sudo firewall-cmd --reload
 su - adam
 vncserver
@@ -90,6 +90,8 @@ exit
 sudo systemctl daemon-reload
 sudo systemctl restart vncserver@:1.service
 sudo rm /tmp/.X11-unix/X1
+# in case of a problem reboot
+
 ```
 
 
