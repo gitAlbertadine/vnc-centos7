@@ -64,6 +64,9 @@ ssh -L 5900:31.187.74.183:5904 adam@31.187.74.183 -N
 ```
 ## script
 ```
+#-https://www.golinuxcloud.com/step-by-step-guide-to-configure-tigervnc/
+
+sudo yum groupinstall -y "GNOME Desktop"
 sudo dd if=/dev/zero of=/swapfile bs=32768 count=1048576
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
@@ -73,26 +76,32 @@ sudo vim /etc/sysctl.conf
 sudo sh -c 'echo "vm.swappiness=10" >> /etc/sysctl.conf'
 sudo free -h
 
-sudo useradd -c "User adam Configured for VNC Access" adam
-sudo passwd adam
-sudo yum groupinstall -y "GNOME Desktop"
-sudo reboot
-
-#-https://www.golinuxcloud.com/step-by-step-guide-to-configure-tigervnc/
-
 sudo yum install -y tigervnc-server
 sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
-sudo vi /etc/systemd/system/vncserver@:1.service
+sudo useradd -c "User adam Configured for VNC Access" adam
+
+sudo passwd adam
+
+sudo vim /etc/systemd/system/vncserver@:1.service
+#adam
 
 sudo systemctl daemon-reload
 su - adam
+
 vncpasswd
+
+exit
+
 sudo systemctl enable vncserver@:1.service
-sudo systemctl restart vncserver@:1.service
+sudo systemctl start vncserver@:1.service
 sudo firewall-cmd --permanent --zone=public --add-port=5900-5901/tcp
 sudo firewall-cmd --reload
 sudo -rm /tmp/.X11-unix/X1
+sudo firewall-cmd --list-all
+sudo reboot
 # in case of a problem reboot
+#cat /proc/sys/vm/swappiness
+
 
 ```
 
