@@ -95,7 +95,7 @@ sudo firewall-cmd --permanent --zone=public --add-port=5900-5901/tcp
 sudo firewall-cmd --reload
 sudo -rm /tmp/.X11-unix/X1
 sudo firewall-cmd --list-all
-sudo reboot
+#sudo reboot
 #cat /proc/sys/vm/swappiness
 
 
