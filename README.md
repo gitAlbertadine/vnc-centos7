@@ -73,7 +73,6 @@ sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
 sudo sh -c 'echo "/swapfile swap swap defaults 0 0" >> /etc/fstab'
-sudo vim /etc/sysctl.conf
 sudo sh -c 'echo "vm.swappiness=10" >> /etc/sysctl.conf'
 sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
 sudo useradd -c "User adam Configured for VNC Access" adam
