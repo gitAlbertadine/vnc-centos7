@@ -1,4 +1,4 @@
-## vnc-centos 7
+=## vnc-centos 7
 ```
 #sudo swapoff -v /swapfile
 #remove /swapfile swap swap defaults 0 0 from the /etc/fstab file.
@@ -89,7 +89,7 @@ vncserver
 exit
 sudo systemctl daemon-reload
 sudo systemctl restart vncserver@:1.service
-sudo -rm /tmp/.X11-unix/X1
+sudo rm /tmp/.X11-unix/X1
 ```
 
 
