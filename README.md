@@ -76,11 +76,13 @@ sudo useradd -c "User adam Configured for VNC Access" adam
 sudo passwd adam
 sudo yum groupinstall -y "GNOME Desktop"
 sudo reboot
+
 #-https://www.golinuxcloud.com/step-by-step-guide-to-configure-tigervnc/
+
 sudo yum install -y tigervnc-server
 sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
 sudo vi /etc/systemd/system/vncserver@:1.service
-#---------------------
+
 sudo systemctl daemon-reload
 su - adam
 vncpasswd
