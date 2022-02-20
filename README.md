@@ -96,7 +96,7 @@ sudo systemctl start firewalld
 sudo firewall-cmd --permanent --zone=public --add-port=5900-5901/tcp
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-all
-sudo -rm /tmp/.X11-unix/X1
+sudo rm /tmp/.X11-unix/X1
 
 #sudo reboot
 #sudo free -h
