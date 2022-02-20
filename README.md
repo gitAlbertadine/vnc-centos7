@@ -89,7 +89,6 @@ vncpasswd
 exit
 
 sudo systemctl daemon-reload
-
 sudo systemctl enable vncserver@:1.service
 sudo systemctl start vncserver@:1.service
 sudo firewall-cmd --permanent --zone=public --add-port=5900-5901/tcp
