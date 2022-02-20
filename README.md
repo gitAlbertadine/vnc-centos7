@@ -84,6 +84,7 @@ sudo vim /etc/systemd/system/vncserver@:1.service
 
 sudo systemctl daemon-reload
 su - adam
+
 vncpasswd
 
 exit
@@ -91,10 +92,12 @@ exit
 sudo systemctl daemon-reload
 sudo systemctl enable vncserver@:1.service
 sudo systemctl start vncserver@:1.service
+sudo systemctl start firewalld
 sudo firewall-cmd --permanent --zone=public --add-port=5900-5901/tcp
 sudo firewall-cmd --reload
-sudo -rm /tmp/.X11-unix/X1
 sudo firewall-cmd --list-all
+sudo -rm /tmp/.X11-unix/X1
+
 #sudo reboot
 #sudo free -h
 #cat /proc/sys/vm/swappiness
